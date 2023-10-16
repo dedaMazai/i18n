@@ -1,16 +1,12 @@
 {
-  "name": "@/i18n",
-  "version": "0.2.1",
+  "name": "andrei-bread-i18n",
+  "version": "0.1.1",
   "description": "Small and type-safe package to create multi-language interfaces.",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "sideEffects": false,
   "scripts": {
     "build": "rm -rf dist && tsc"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com//i18n.git"
   },
   "keywords": [
     "galera",
@@ -19,10 +15,6 @@
   ],
   "author": "Andrei Chipizubov",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com//i18n/issues"
-  },
-  "homepage": "https://github.com//i18n#readme",
   "devDependencies": {
     "@types/react": "^18.0.28",
     "react": "^18.2.0",
