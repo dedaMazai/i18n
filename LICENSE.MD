@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2023 Ayub Begimkulov
+Copyright (c) 2023 Andrei Chipizubov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

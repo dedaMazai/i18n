@@ -1,5 +1,3 @@
-# @ayub-begimkulov/i18n
-
 Small and type-safe package to create multi-language interfaces.
 
 Features
@@ -13,7 +11,7 @@ Features
 ## Installation
 
 ```shell
-npm i @ayub-begimkulov/i18n
+npm i @andrei-bread/i18n
 ```
 
 ## Usage
@@ -21,23 +19,20 @@ npm i @ayub-begimkulov/i18n
 ### Basic example
 
 ```ts
-import { I18N, createPluralize } from "@ayub-begimkulov/i18n";
+import { I18N, createPluralize } from "@andrei-bread/i18n";
 import en from "./keys/en.json";
 import ru from "./keys/ru.json";
-
-const pluralizeEn = createPluralize("en");
-const pluralizeRu = createPluralize("ru");
 
 const i18n = new I18N({
   defaultLang: "en",
   languages: {
     en: {
       keyset: en,
-      pluralize: pluralizeEn,
+      pluralize: createPluralize('en'),
     },
     ru: {
       keyset: ru,
-      pluralize: pluralizeRu,
+      pluralize: createPluralize('ru'),
     },
   },
 });
@@ -54,7 +49,7 @@ import {
   createPluralize,
   useTranslate as useTranslateBase,
   useI18n as useI18nBase,
-} from "@ayub-begimkulov/i18n";
+} from "@andrei-bread/i18n";
 import en from "./keys/en.json";
 import ru from "./keys/ru.json";
 
@@ -66,11 +61,11 @@ const i18n = new I18N({
   languages: {
     en: {
       keyset: en,
-      pluralize: pluralizeEn,
+      pluralize: createPluralize("en");,
     },
     ru: {
       keyset: ru,
-      pluralize: pluralizeRu,
+      pluralize: createPluralize("ru");,
     },
   },
 });
@@ -79,7 +74,7 @@ export const useTranslate = useTranslateBase<typeof i18n>;
 export const useI18n = useI18nBase<typeof i18n>;
 
 // index.tsx
-import { I18NProvider } from "@ayub-begimkulov/i18n";
+import { I18NProvider } from "@andrei-bread/i18n";
 import { i18n } from "./i18n";
 
 // ...
@@ -121,7 +116,7 @@ Class that is responsible for loading/storing translations and updating language
 Example:
 
 ```ts
-import { I18N, createPluralize } from "@ayub-begimkulov/i18n";
+import { I18N, createPluralize } from "@andrei-bread/i18n";
 import en from "./keys/en.json";
 import ru from "./keys/ru.json";
 
@@ -175,7 +170,7 @@ A hook that returns a translate function. The component that uses this hook will
 Example:
 
 ```tsx
-import { useTranslate } from "@ayub-begimkulov/i18n";
+import { useTranslate } from "@andrei-bread/i18n";
 
 const Component = () => {
   const t = useTranslate();
@@ -191,7 +186,7 @@ Creates a pluralize function for a given locale that will return a plural format
 Example:
 
 ```ts
-import { createPluralize } from "@ayub-begimkulov/i18n";
+import { createPluralize } from "@andrei-bread/i18n";
 
 const pluralizeEn = createPluralize("en");
 
@@ -206,7 +201,7 @@ A wrapper around React context provider. Used to share `I18N` instance across th
 Example:
 
 ```tsx
-import { I18NProvider } from '@ayub-begimkulov/i18n';
+import { I18NProvider } from '@andrei-bread/i18n';
 import { App } from './App';
 import { i18n } form './i18n';
 
@@ -224,7 +219,7 @@ A component that allows to use React component inside of your translations.
 Example:
 
 ```tsx
-import { TaggedText, useTranslate } from "@ayub-begimkulov/i18n";
+import { TaggedText, useTranslate } from "@andrei-bread/i18n";
 
 export const Component = () => {
   const t = useTranslate();
